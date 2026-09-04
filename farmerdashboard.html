@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farmer Dashboard</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+
+    /* FARM BACKGROUND IMAGE */
+    background-image: url("https://images.unsplash.com/photo-1464226184884-fa280b87c399");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: #333;
+}
+
+/* Light overlay for readability */
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(255,255,255,0.25);
+    z-index:-1;
+}
+
+.header {
+    background-color: #2e7d32;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 500;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.header .logout {
+    background-color: #e53935;
+    padding: 10px 18px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.header .logout:hover {
+    background-color: #b71c1c;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin: 15px 0 10px 0;
+    font-size: 20px;
+    color: #2e7d32;
+}
+
+.card p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.card a button {
+    padding: 12px 25px;
+    font-size: 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.card a button.add {
+    background-color: #43a047;
+    color: white;
+}
+
+.card a button.view {
+    background-color: #0288d1;
+    color: white;
+}
+
+.card a button.orders {
+    background-color: #fb8c00;
+    color: white;
+}
+
+</style>
+</head>
+<body>
+
+<div class="header">
+    <div>Farmer Dashboard</div>
+    <a href="logout"><button class="logout">Logout</button></a>
+</div>
+
+<div class="container">
+
+<div class="card">
+<img src="https://img.icons8.com/color/96/000000/add-property.png">
+<h3>Add Product</h3>
+<p>Add your new farm products for sale. Keep your inventory updated.</p>
+<a href="addproduct.html"><button class="add">Add Product</button></a>
+</div>
+
+<div class="card">
+<img src="https://img.icons8.com/color/96/000000/product.png">
+<h3>View My Products</h3>
+<p>Check the products you have added. Edit or remove products if needed.</p>
+<a href="ViewProductsServlet"><button class="view">View Products</button></a>
+</div>
+
+<div class="card">
+<img src="https://img.icons8.com/color/96/000000/purchase-order.png">
+<h3>Orders</h3>
+<p>Check customer orders and update their status to Delivered once processed.</p>
+<a href="vieworders.jsp"><button class="orders">View Orders</button></a>
+</div>
+
+</div>
+
+</body>
+</html>

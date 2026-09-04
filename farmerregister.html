@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Farmer Registration</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    margin:0;
+    padding:0;
+
+    /* Farmer Background Image */
+    background-image:url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+/* Dark overlay */
+.overlay{
+    background:rgba(0,0,0,0.6);
+    height:100vh;
+    padding-top:40px;
+}
+
+.container{
+    width:420px;
+    margin:auto;
+    background:rgba(255,255,255,0.95);
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.4);
+}
+
+h2{
+    text-align:center;
+    color:#2e7d32;
+    margin-bottom:20px;
+}
+
+input, textarea{
+    width:100%;
+    padding:12px;
+    margin:8px 0;
+    border-radius:6px;
+    border:1px solid #ccc;
+    font-size:14px;
+}
+
+input:focus, textarea:focus{
+    outline:none;
+    border:1px solid #2e7d32;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#2e7d32;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:16px;
+    margin-top:10px;
+}
+
+button:hover{
+    background:#1b5e20;
+}
+
+a{
+    text-decoration:none;
+    color:#2e7d32;
+    font-weight:bold;
+}
+
+p{
+    text-align:center;
+    margin-top:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="overlay">
+
+<div class="container">
+
+<h2>Farmer Registration</h2>
+
+<form action="FarmerRegisterServlet" method="post">
+
+<input type="text" name="farmer_id" placeholder="Enter Farmer ID" required>
+
+<input type="text" name="name" placeholder="Enter Full Name" required>
+
+<input type="email" name="email" placeholder="Enter Email" required>
+
+<input type="password" name="password" placeholder="Enter Password" required>
+
+<textarea name="text" name="status" placeholder="Enter Status" required></textarea>
+
+<button type="submit">Register</button>
+
+</form>
+
+<p>
+Already have account? 
+<a href="farmerlogin.html">Login Here</a>
+</p>
+
+</div>
+
+</div>
+
+</body>
+</html>

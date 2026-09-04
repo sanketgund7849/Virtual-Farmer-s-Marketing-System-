@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Farmers Marketing System</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#2e7d32;
+padding:15px 60px;
+color:white;
+}
+
+.navbar h2{
+font-weight:600;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-size:15px;
+}
+
+.nav-links a:hover{
+text-decoration:underline;
+}
+
+/* HERO SECTION */
+
+.hero{
+height:80vh;
+background:
+linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854");
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+}
+
+.hero h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:18px;
+margin-bottom:25px;
+}
+
+.hero button{
+padding:12px 25px;
+border:none;
+background:#43a047;
+color:white;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.hero button:hover{
+background:#1b5e20;
+}
+
+/* SECTIONS */
+
+.section{
+padding:60px 80px;
+text-align:center;
+}
+
+.section h2{
+margin-bottom:30px;
+color:#2e7d32;
+}
+
+/* CARD GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card h3{
+margin-bottom:10px;
+}
+
+.card p{
+font-size:14px;
+color:#555;
+margin-bottom:15px;
+}
+
+.card a{
+display:inline-block;
+padding:10px 18px;
+background:#2e7d32;
+color:white;
+text-decoration:none;
+border-radius:5px;
+}
+
+.card a:hover{
+background:#1b5e20;
+}
+
+/* FOOTER */
+
+.footer{
+background:#222;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+<h2>🌾 Farmers Market</h2>
+
+<div class="nav-links">
+
+<a href="#">Home</a>
+<a href="login.html">Customer Login</a>
+<a href="farmerlogin.html">Farmer Login</a>
+<a href="ownerLogin.html">Owner</a>
+
+</div>
+
+</div>
+
+
+<!-- HERO -->
+
+<div class="hero">
+
+<div>
+<h1>Online Farmers Marketing System</h1>
+<p>Digital Marketplace Connecting Farmers and Customers</p>
+
+<button onclick="location.href='register.html'">Start Shopping</button>
+</div>
+
+</div>
+
+
+<!-- CUSTOMER SECTION -->
+
+<div class="section">
+
+<h2>Customer Services</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Customer Registration</h3>
+<p>Create your account and start buying fresh farm products.</p>
+<a href="register.html">Register</a>
+</div>
+
+<div class="card">
+<h3>Customer Login</h3>
+<p>Login to browse products and place orders.</p>
+<a href="login.html">Login</a>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FARMER SECTION -->
+
+<div class="section">
+
+<h2>Farmer Services</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Farmer Registration</h3>
+<p>Register and sell your agricultural products online.</p>
+<a href="farmerregister.html">Register</a>
+</div>
+
+<div class="card">
+<h3>Farmer Login</h3>
+<p>Login to manage products and customer orders.</p>
+<a href="farmerlogin.html">Login</a>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- OWNER -->
+
+<div class="section">
+
+<h2>System Owner</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Owner Login</h3>
+<p>Admin access to monitor the entire marketing system.</p>
+<a href="ownerLogin.html">Login</a>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+© 2026 Online Farmers Marketing System  
+Developed for Smart Agriculture By the Sanket
+
+</div>
+
+</body>
+</html>

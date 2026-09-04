@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Customer Login</title>
+
+<link rel="stylesheet" href="new.css">
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+
+    /* Amazon style background image */
+    background-image:url("https://images.unsplash.com/photo-1607082349566-187342175e2f");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+/* dark overlay */
+.overlay{
+    background:rgba(0,0,0,0.6);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* login box */
+.login-container{
+    width:350px;
+    background:white;
+    padding:30px;
+    border-radius:8px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.4);
+}
+
+.login-container h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+/* input */
+input{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:4px;
+}
+
+/* login button */
+button{
+    width:100%;
+    padding:10px;
+    background:#ffd814;
+    border:none;
+    border-radius:5px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#f7ca00;
+}
+
+/* back button */
+.btn{
+    display:block;
+    text-align:center;
+    margin-top:10px;
+    padding:8px;
+    background:#232f3e;
+    color:white;
+    text-decoration:none;
+    border-radius:4px;
+}
+
+.btn:hover{
+    background:#0f1111;
+}
+
+/* register message */
+.register{
+    text-align:center;
+    margin-top:15px;
+    font-size:14px;
+}
+
+.register a{
+    color:#0066c0;
+    text-decoration:none;
+}
+
+.register a:hover{
+    text-decoration:underline;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="overlay">
+
+<div class="login-container">
+
+<h2>Customer Login</h2>
+
+<form action="CustomerLoginServlet" method="post">
+
+Email:
+<input type="text" name="email" placeholder="ENTER YOUR EMAIL" required>
+
+Password:
+<input type="password" name="password" placeholder="ENTER PASSWORD" required>
+
+<button type="submit">LOGIN</button>
+
+<a href="index.html" class="btn">BACK</a>
+
+</form>
+
+<div class="register">
+Don't have an account? 
+<a href="register.html">Register here</a>
+</div>
+
+</div>
+</div>
+
+</body>
+</html>

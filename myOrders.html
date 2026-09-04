@@ -1,0 +1,95 @@
+<%@ page import="java.sql.*" %>
+<%@ page import="javax.servlet.http.*" %>
+<%@ page import="javax.servlet.*" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>My Cart</title>
+<style>
+body { font-family: Arial, sans-serif; background:#f4f6f9; padding:20px; }
+h2 { text-align:center; color:#2e7d32; margin-bottom:20px; }
+table { width:90%; margin:0 auto; border-collapse:collapse; background:white; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+th, td { padding:12px 15px; text-align:center; border-bottom:1px solid #ddd; }
+th { background:#2e7d32; color:white; }
+tr:hover { background:#f1f1f1; }
+button { padding:5px 10px; background:#43a047; color:white; border:none; border-radius:5px; cursor:pointer; }
+button:hover { background:#2e7d32; }
+.total { font-weight:bold; color:#2e7d32; }
+.place-order { margin-top:20px; display:block; padding:10px 20px; background:#0288d1; color:white; border:none; border-radius:5px; cursor:pointer; text-align:center; text-decoration:none; width:200px; margin-left:auto; margin-right:auto; }
+.place-order:hover { background:#01579b; }
+</style>
+</head>
+<body>
+<h2>My Cart</h2>
+
+<table>
+<tr>
+<th>Product Name</th>
+<th>Type</th>
+<th>Price</th>
+<th>Quantity</th>
+<th>Total</th>
+<th>Action</th>
+</tr>
+
+<%
+HttpSession session = request.getSession();
+int customerId = (int) session.getAttribute("customer_id");
+double grandTotal = 0;
+
+try {
+    Connection con = DBConnection.getConnection();
+    String sql = "SELECT c.cart_id, p.product_name, p.product_type, p.price, c.quantity " +
+                 "FROM cart c JOIN products p ON c.product_id=p.product_id WHERE c.customer_id=?";
+    PreparedStatement ps = con.prepareStatement(sql);
+    ps.setInt(1, customerId);
+    ResultSet rs = ps.executeQuery();
+
+    while(rs.next()){
+        int cartId = rs.getInt("cart_id");
+        String name = rs.getString("product_name");
+        String type = rs.getString("product_type");
+        double price = rs.getDouble("price");
+        int qty = rs.getInt("quantity");
+        double total = price * qty;
+        grandTotal += total;
+%>
+
+<tr>
+<td><%=name%></td>
+<td><%=type%></td>
+<td>₹ <%=price%></td>
+<td><%=qty%></td>
+<td>₹ <%=total%></td>
+<td>
+<form action="UpdateCartServlet" method="post" style="display:inline;">
+<input type="hidden" name="cart_id" value="<%=cartId%>">
+<input type="number" name="quantity" value="<%=qty%>" min="1" required>
+<button type="submit">Update</button>
+</form>
+<form action="DeleteFromCartServlet" method="post" style="display:inline;">
+<input type="hidden" name="cart_id" value="<%=cartId%>">
+<button type="submit">Remove</button>
+</form>
+</td>
+</tr>
+
+<%
+    }
+    con.close();
+} catch(Exception e){ e.printStackTrace(); }
+%>
+<tr>
+<td colspan="4" class="total">Grand Total</td>
+<td colspan="2" class="total">₹ <%=grandTotal%></td>
+</tr>
+</table>
+
+<form action="PlaceOrderServlet" method="post">
+<button type="submit" class="place-order">Place Order</button>
+</form>
+
+<a href="viewAllProducts.jsp" style="display:block; text-align:center; margin-top:20px;">Back to Products</a>
+</body>
+</html>

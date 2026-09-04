@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Customer Register</title>
+
+<link rel="stylesheet" href="new.css">
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+
+    /* Amazon style background image */
+    background-image:url("https://images.unsplash.com/photo-1607082349566-187342175e2f");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+/* overlay */
+.overlay{
+    background:rgba(0,0,0,0.65);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* register box */
+.register-box{
+    width:400px;
+    background:white;
+    padding:30px;
+    border-radius:8px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.4);
+}
+
+.register-box h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+/* inputs */
+input[type=text],
+input[type=password]{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    border:1px solid #ccc;
+    border-radius:4px;
+}
+
+/* radio */
+.gender{
+    margin-top:8px;
+}
+
+/* buttons */
+button{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    border:none;
+    border-radius:5px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* register button */
+button[type=submit]{
+    background:#ffd814;
+}
+
+button[type=submit]:hover{
+    background:#f7ca00;
+}
+
+/* back button */
+button[type=button]{
+    background:#232f3e;
+    color:white;
+}
+
+button[type=button]:hover{
+    background:#0f1111;
+}
+
+/* login link */
+.login-msg{
+    text-align:center;
+    margin-top:15px;
+    font-size:14px;
+}
+
+.login-msg a{
+    color:#0066c0;
+    text-decoration:none;
+}
+
+.login-msg a:hover{
+    text-decoration:underline;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="overlay">
+
+<div class="register-box">
+
+<h2>CUSTOMER REGISTER</h2>
+
+<form action="CustomerRegisterServlet" method="post">
+
+ID:
+<input type="text" name="id" placeholder="ENTER YOUR ID" required>
+
+Name:
+<input type="text" name="name" placeholder="ENTER YOUR NAME" required>
+
+Email:
+<input type="text" name="email" placeholder="ENTER YOUR EMAIL" required>
+
+Password:
+<input type="password" name="password" placeholder="ENTER YOUR PASSWORD" required>
+
+MOBILE:
+<input type="text" name="mobile" placeholder="ENTER YOUR MOBILE NUMBER" required>
+
+ADDRESS:
+<input type="text" name="address" placeholder="ENTER YOUR ADDRESS" required>
+
+<div class="gender">
+GENDER:
+<input type="radio" name="gender" value="Male" required> MALE
+<input type="radio" name="gender" value="Female" required> FEMALE
+</div>
+
+<input type="text" name="role" placeholder="YOUR ROLE">
+
+<button type="submit">REGISTER</button>
+
+<button type="button" onclick="history.back()">BACK</button>
+
+</form>
+
+<div class="login-msg">
+Already registered? 
+<a href="login.html">Go to Login</a>
+</div>
+
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Add Product</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    padding:0;
+
+    /* Agriculture Background Image */
+    background-image:url("https://images.unsplash.com/photo-1464226184884-fa280b87c399");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+/* Dark overlay */
+.overlay{
+    background:rgba(0,0,0,0.6);
+    height:100vh;
+    padding-top:60px;
+}
+
+.container{
+    width:450px;
+    margin:auto;
+    background:rgba(255,255,255,0.95);
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.4);
+}
+
+h2{
+    text-align:center;
+    color:#2e7d32;
+    margin-bottom:20px;
+}
+
+input, select{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border-radius:6px;
+    border:1px solid #ccc;
+    font-size:14px;
+}
+
+input:focus, select:focus{
+    outline:none;
+    border:1px solid #2e7d32;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#2e7d32;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#1b5e20;
+}
+
+.back-btn{
+    background:#555;
+    margin-top:10px;
+}
+
+.back-btn:hover{
+    background:#333;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="overlay">
+
+<div class="container">
+
+<h2>Add Product</h2>
+
+<form action="AddProductServlet" method="post">
+
+<input type="text" name="productName" placeholder="Product Name" required>
+
+<input type="text" name="productType" placeholder="Product Type (Vegetable/Fruit)" required>
+
+<input type="number" name="price" placeholder="Price (₹)" required>
+
+<input type="number" name="quantity" placeholder="Quantity (Kg)" required>
+
+<select name="status" required>
+<option value="">-- Select Status --</option>
+<option value="AVAILABLE">AVAILABLE</option>
+<option value="SOLD">SOLD</option>
+</select>
+
+<button type="submit">Add Product</button>
+
+</form>
+
+<a href="farmerdashboard.html">
+<button class="back-btn">Back to Dashboard</button>
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
